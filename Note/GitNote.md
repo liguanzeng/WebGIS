@@ -18,10 +18,14 @@
 
    `git add .`
 
-4. 将修改上传到暂存区
+4. 删除文件
+
+   `git rm <file name>`
+
+5. 将修改上传到暂存区
 
    `git commit -m "这里描述你的改动"`
 
-5. 将操作推送到远程仓库
+6. 将操作推送到远程仓库
 
    `git push`or`git push origin main`
