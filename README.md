@@ -7,3 +7,10 @@
 2. 掌握Leaflet api的使用
 3. 掌握一个gis服务器
 4. 掌握一个gis数据库
+
+### 目前选择的技术栈
+
+- 数据库：`PostGIS`
+- 服务器：`Geoserver`
+- 前端框架：`Vue`
+- 前端库：`Leaflet`
