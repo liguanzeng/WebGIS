@@ -14,3 +14,10 @@
 - 服务器：`Geoserver`
 - 前端框架：`Vue`
 - 前端库：`Leaflet`
+
+### 地图api
+
+- MapBox
+- 高德地图api
+
+> 不清楚这种api在整个webgis框架中处在什么层面
