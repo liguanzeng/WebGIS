@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>UsingGeoJSON</title>
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+		   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+		   crossorigin=""/>
+		<script src="../leaflet/leaflet-src.js"></script>
+		<!-- <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+		   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+		   crossorigin=""></script> -->
+		<style>
+			body{
+				padding: 0;
+				margin: 0;
+			}
+			html,body,#mapid{
+				height: 100%;
+				width: 100vm;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="mapid"></div>
+		<script>
+			var map = L.map('mapid').setView([30.47,114.35],13);
+			
+			L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+				maxZoom:18,
+				id:'mapbox/dark-v9',
+				tileSize:512,
+				zoomOffset:-1,
+			}).addTo(map)
+			
+			L.marker([30.47, 114.35]).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+			var geojsonFeature = {
+				"type":"Feature",
+				"properties":{
+					"name":"Coors Field",
+					"amenity":"Baseball Stadium",
+					"popupContent":"这就是我玩的地方！",
+				},
+				"geometry":{
+					"type":"Point",
+					"coordinates":[30.48,114.39]
+				}
+			};
+			
+			L.geoJSON(geojsonFeature).addTo(map);
+		</script>
+	</body>
+</html>
